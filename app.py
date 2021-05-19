@@ -11,6 +11,7 @@ app = Quart(__name__)
 
 def load_game_questions(file):
     df = pandas.read_csv(file)
+    df.sort_values("Score", inplace=True)
     
     cats = list(set(df["Category"].values))
 
