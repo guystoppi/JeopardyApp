@@ -59,11 +59,11 @@ body {
     font-size: 30pt;
 }
 
-#makegameform button {
+#makegameform input[type="submit"] {
     font-size: 20pt;
 }
 
-#makegameform select {
+#makegameform input[type="file"] {
     font-size: 30pt;
     margin: 10px;
     margin-top: 100px;

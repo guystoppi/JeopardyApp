@@ -5,8 +5,7 @@ import os
 import copy
 import uuid
 
-from quart import Quart, websocket, send_from_directory, redirect
-from quart import render_template
+from quart import Quart, websocket, send_from_directory, redirect, request, render_template
 
 app = Quart(__name__)
 
@@ -97,19 +96,30 @@ async def finalanswer(gamename):
 @app.route('/')
 async def welcome():
     return await render_template("welcome.html", games=list(all_games.keys()))
-
     
 @app.route('/home')
 async def home_welcome():
-    return await render_template("welcome.html", games=list(all_games.keys()))
+    return redirect("/", code=302)
+
+
+@app.route('/upload', methods=['POST'])
+async def upload_game():
+    uploads = await request.files
+    gamelabel = "game" + str(len(os.listdir("res")) + 1)
+    gamefile = "res/%s.csv" % gamelabel
+
+    uploads["file"].save(gamefile)
+
+    all_games[gamelabel] = load_game_questions(gamefile)
+
+    return redirect("/game/make/" + gamelabel)
 
 if __name__ == '__main__':
 
-    res_dir = os.path.join(app.root_path, 'static/res')
-    for file in os.listdir(res_dir):
-        all_games[os.path.splitext(file)[0]] = load_game_questions(os.path.join(res_dir, file))
-    
-    print("LOADING GAMES: ", all_games.keys())
+    app.config['UPLOAD_FOLDER'] = "/res"
 
+    # res_dir = os.path.join(app.root_path, 'static/res')
+    # for file in os.listdir(res_dir):
+    #     all_games[os.path.splitext(file)[0]] = load_game_questions(os.path.join(res_dir, file))
 
     app.run()

@@ -14,15 +14,11 @@
     Welcome to Jeopardy!
     </div>
 
-    <div id="makegameform">
-        <label>Select Game</label>
-        <select id='gamename'>
-            {% for gamelabel in games %}
-                <option value="{{ gamelabel }}">{{ gamelabel }}</option>
-            {% endfor %}
-        </select><br />
-        <button onclick="makeGame()">Select</button>
-    </div>
+    <form id="makegameform" action="/upload" method="post" enctype="multipart/form-data">
+        <label>Upload Game</label>
+        <input type="file" name="file" />
+        <input type="submit" name="submit" />
+    </form>
 
 </body>
 </html>
