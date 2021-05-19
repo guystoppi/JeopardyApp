@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap');
+
+body {
+    font-family: Noto Sans JP, sans-serif;
+    font-weight: 100;
+}
+
+.full {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 90vh;
+    font-size: 45pt;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+}
+
+.nextpage {
+    position: absolute;
+    right: 75px;
+    width: 200px;
+    padding: 10px;
+    font-size: 20pt;
+    bottom: 2vh;
+    font-family: Noto Sans JP, sans-serif;
+    font-weight: 100;
+    
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    border-radius: 15px;
+    border-top: 1px solid #333333;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #333333;
+    text-align: center;
+}
+
+.nextpage:hover {
+    background-color: #999;
+}
+
+#header {
+    width: 100%;
+    font-size: 50pt;
+    text-align: center;
+}
+
+#makegameform {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+#makegameform {
+    font-size: 30pt;
+}
+
+#makegameform button {
+    font-size: 20pt;
+}
+
+#makegameform select {
+    font-size: 30pt;
+    margin: 10px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+#roomform {
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#roomform input[name='room_name'] {
+    margin-bottom: 50px;
+    font-size: 20pt;
+}
+
+#gametable td {
+    padding: 50px;
+    text-align: center;
+}
+
+#gametable td.unanswered:hover {
+    background-color: #EEE;
+}
+
+#gametable td.answered {
+    background-color: #666;
+}
+
+#gametable th {
+    padding: 50px;
+    text-align: center;
+    font-size: 30pt;
+    font-weight: 100;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeopardy!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src = "{{ url_for('static', filename='main.js')}}" ></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename="styles.css") }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+</head>
+<body>
+    <div id='header'>
+    Welcome to Jeopardy!
+    </div>
+
+    <div id="makegameform">
+        <label>Select Game</label>
+        <select id='gamename'>
+            {% for gamelabel in games %}
+                <option value="{{ gamelabel }}">{{ gamelabel }}</option>
+            {% endfor %}
+        </select><br />
+        <button onclick="makeGame()">Select</button>
+    </div>
+
+</body>
+</html>
