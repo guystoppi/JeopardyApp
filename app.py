@@ -105,6 +105,8 @@ async def home_welcome():
 @app.route('/upload', methods=['POST'])
 async def upload_game():
     uploads = await request.files
+
+    os.makedirs("res", exist_ok=True)
     gamelabel = "game" + str(len(os.listdir("res")) + 1)
     gamefile = "res/%s.csv" % gamelabel
 
