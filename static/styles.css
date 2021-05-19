@@ -77,8 +77,13 @@ body {
     font-size: 20pt;
 }
 
+#gametable {
+    width: 100vw;
+    height: 70vh;
+}
+
 #gametable td {
-    padding: 50px;
+    font-size: 25pt;
     text-align: center;
 }
 
@@ -91,8 +96,7 @@ body {
 }
 
 #gametable th {
-    padding: 50px;
     text-align: center;
-    font-size: 30pt;
+    font-size: 25pt;
     font-weight: 100;
 }
