@@ -108,4 +108,8 @@ if __name__ == '__main__':
     res_dir = os.path.join(app.root_path, 'static/res')
     for file in os.listdir(res_dir):
         all_games[os.path.splitext(file)[0]] = load_game_questions(os.path.join(res_dir, file))
+    
+    print("LOADING GAMES: ", all_games.keys())
+
+
     app.run()
